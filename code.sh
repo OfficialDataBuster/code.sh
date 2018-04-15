@@ -1,8 +1,4 @@
 #!/bin/bash
-if [ -f ./install.sh ]
-	then
-		rm ./install.sh
-fi
 if [ -z $1 ]
 	then
 		echo -e "\e[31m"
