@@ -1,9 +1,8 @@
 #!/bin/bash
 
-function jumpto
-{
+function goto {  
     label=$1
-    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    cmd=$(sed -n "/$#label#:/{:a;n;p;ba};" $0 | grep -v ':$')
     eval "$cmd"
     exit
 }
@@ -35,13 +34,13 @@ else
 fi
 chmod 777 *
 alias=${1:-"alias"}
-:alias
+#alias#
 echo "Do you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [y/n]"
 read alias
 if [[ -z $alias ]]
    then
     echo "Please choose y for yes or n for no."
-    jumpto $alias
+    goto $alias
 elif [[ $alias != 'Y' ]]
    then
     echo "Please choose y for yes or n for no."
