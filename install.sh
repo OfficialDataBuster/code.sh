@@ -25,7 +25,7 @@ else
     exit
 fi
 chmod 777 *
-echo "Do you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [y/N]"
+echo -e "\e[34mDo you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [y/N]\e[0m"
 read alias
 if [[ -z $alias ]]
    then
