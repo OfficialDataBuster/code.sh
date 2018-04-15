@@ -3,6 +3,7 @@
 Shite little repo for an HTTP Code Checker.
 
 ## Requirements: 
+>> These will be installed automatically if you run the install command below.
 * [curl](https://linux.die.net/man/1/curl)
 * [figlet](https://linux.die.net/man/6/figlet)
 
