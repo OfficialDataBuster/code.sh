@@ -1,4 +1,13 @@
 #!/bin/bash
+
+function jumpto
+{
+    label=$1
+    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    eval "$cmd"
+    exit
+}
+
 SUDO=''
 if (( $EUID != 0 )); then
     SUDO='sudo'
@@ -25,14 +34,14 @@ else
     exit
 fi
 chmod 777 *
-echo "Do you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [Y/n]"
+alias=${1:-"alias"}
+:alias
+echo "Do you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [y/n]"
 read alias
-if [[ $alias != 'n' ]]
+if [[ -z $alias ]]
    then
-    alias='Y'
-elif [[ $alias != 'N' ]]
-   then
-    alias='Y'
+    echo "Please choose y for yes or n for no."
+    jumpto $alias
 elif [[ $alias == 'Y' ]]
    then
      location=$(readlink -f $0)
@@ -41,6 +50,13 @@ elif [[ $alias == 'Y' ]]
      echo "Alias of $path/code.sh set to code.sh."
      source ~/.bashrc
 elif [[ $alias == 'y' ]]
+   then
+     location=$(readlink -f $0)
+     path=`dirname $location`
+     echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
+     echo "Alias of $path/code.sh set to code.sh."
+     source ~/.bashrc
+elif [[ $alias == 'yes' ]]
    then
      location=$(readlink -f $0)
      path=`dirname $location`
