@@ -7,7 +7,7 @@ Shite little repo for an HTTP Code Checker.
 * [curl](https://linux.die.net/man/1/curl)
 * [figlet](https://linux.die.net/man/6/figlet)
 
-## Install
+## Installation:
 ```sh
 $ git clone https://github.com/OfficialDataBuster/code.sh.git; cd code.sh; sudo chmod +x code.sh install.sh; sudo ./install.sh; sudo rm install.sh; ./code.sh
 ```
