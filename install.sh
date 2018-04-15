@@ -42,6 +42,7 @@ if [[ $alias == 'Y' ]]
      path=`dirname $location`
      echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
      echo "Alias of $path/code.sh set to code.sh."
+     sleep 1
      source ~/.bashrc
 elif [[ $alias == 'y' ]]
    then
@@ -49,6 +50,7 @@ elif [[ $alias == 'y' ]]
      path=`dirname $location`
      echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
      echo "Alias of $path/code.sh set to code.sh."
+     sleep 1
      source ~/.bashrc
 elif [[ $alias == 'yes' ]]
    then
@@ -56,6 +58,7 @@ elif [[ $alias == 'yes' ]]
      path=`dirname $location`
      echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
      echo "Alias of $path/code.sh set to code.sh."
+     sleep 1
      source ~/.bashrc
 elif [[ $alias == 'Yes' ]]
    then
@@ -63,6 +66,7 @@ elif [[ $alias == 'Yes' ]]
      path=`dirname $location`
      echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
      echo "Alias of $path/code.sh set to code.sh."
+     sleep 1
      source ~/.bashrc
 else
    echo "Skipping alias setup."
