@@ -35,7 +35,8 @@ elif [[ $alias != 'y' ]]
    then
     echo "Please choose y for yes or n for no."
     read alias
-elif [[ $alias == 'Y' ]]
+fi
+if [[ $alias == 'Y' ]]
    then
      location=$(readlink -f $0)
      path=`dirname $location`
