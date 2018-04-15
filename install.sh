@@ -42,6 +42,22 @@ if [[ -z $alias ]]
    then
     echo "Please choose y for yes or n for no."
     jumpto $alias
+elif [[ $alias != 'Y' ]]
+   then
+    echo "Please choose y for yes or n for no."
+    jumpto $alias
+elif [[ $alias != 'y' ]]
+   then
+    echo "Please choose y for yes or n for no."
+    jumpto $alias
+elif [[ $alias != 'yes' ]]
+   then
+    echo "Please choose y for yes or n for no."
+    jumpto $alias
+elif [[ $alias != 'Yes' ]]
+   then
+    echo "Please choose y for yes or n for no."
+    jumpto $alias
 elif [[ $alias == 'Y' ]]
    then
      location=$(readlink -f $0)
@@ -57,6 +73,13 @@ elif [[ $alias == 'y' ]]
      echo "Alias of $path/code.sh set to code.sh."
      source ~/.bashrc
 elif [[ $alias == 'yes' ]]
+   then
+     location=$(readlink -f $0)
+     path=`dirname $location`
+     echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
+     echo "Alias of $path/code.sh set to code.sh."
+     source ~/.bashrc
+elif [[ $alias == 'Yes' ]]
    then
      location=$(readlink -f $0)
      path=`dirname $location`
