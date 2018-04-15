@@ -8,5 +8,5 @@ Shite little repo for an HTTP Code Checker.
 
 ## Install
 ```sh
-$ git clone https://github.com/OfficialDataBuster/code.sh.git; chmod +x code.sh install.sh; sudo install.sh; rm install.sh; ./code.sh
+$ git clone https://github.com/OfficialDataBuster/code.sh.git; cd code.sh; chmod +x code.sh install.sh; sudo install.sh; rm install.sh; ./code.sh
 ```
