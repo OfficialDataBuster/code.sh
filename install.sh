@@ -31,6 +31,10 @@ if [[ -z $alias ]]
    then
     echo "Please choose y for yes or n for no."
     read alias
+elif [[ $alias != 'y' ]]
+   then
+    echo "Please choose y for yes or n for no."
+    read alias
 elif [[ $alias == 'Y' ]]
    then
      location=$(readlink -f $0)
