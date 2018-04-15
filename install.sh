@@ -27,7 +27,10 @@ fi
 chmod 777 *
 echo "Do you want me to set up an alias for code.sh, so you can execute it where ever you're located on your system? [Y/n]"
 read alias
-if [[ -z $alias ]]
+if [ $alias != 'n' ]
+   then
+    alias='Y'
+elif [ $alias != 'N' ]
    then
     alias='Y'
 elif [ $alias == 'Y' ]
@@ -43,6 +46,7 @@ elif [ $alias == 'y' ]
      path=`dirname $location`
      echo "alias code.sh='$path/code.sh'" >> ~/.bashrc
      echo "Alias of $path/code.sh set to code.sh."
+     source ~/.bashrc
 else
    echo "Skipping alias setup."
 fi
