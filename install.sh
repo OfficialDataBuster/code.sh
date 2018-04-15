@@ -52,7 +52,7 @@ elif [[ $alias != 'y' ]]
 elif [[ $alias != 'yes' ]]
    then
     echo "Please choose y for yes or n for no."
-    jumpto $alias
+    goto $alias
 elif [[ $alias != 'Yes' ]]
    then
     echo "Please choose y for yes or n for no."
