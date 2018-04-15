@@ -44,11 +44,11 @@ if [[ -z $alias ]]
 elif [[ $alias != 'Y' ]]
    then
     echo "Please choose y for yes or n for no."
-    jumpto $alias
+    goto $alias
 elif [[ $alias != 'y' ]]
    then
     echo "Please choose y for yes or n for no."
-    jumpto $alias
+    goto $alias
 elif [[ $alias != 'yes' ]]
    then
     echo "Please choose y for yes or n for no."
@@ -56,7 +56,7 @@ elif [[ $alias != 'yes' ]]
 elif [[ $alias != 'Yes' ]]
    then
     echo "Please choose y for yes or n for no."
-    jumpto $alias
+    goto $alias
 elif [[ $alias == 'Y' ]]
    then
      location=$(readlink -f $0)
